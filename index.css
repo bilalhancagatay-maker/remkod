@@ -1,0 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@100;300;400;700;900&display=swap');
+
+:root {
+  --theme-primary: #00f2ff;
+  --theme-secondary: #bc13fe;
+  --theme-bg: #020617;
+  --theme-card-bg: rgba(0, 0, 0, 0.4);
+  --theme-font-main: 'Plus Jakarta Sans', sans-serif;
+  --theme-font-mono: 'JetBrains Mono', monospace;
+  --theme-glow: rgba(0, 242, 255, 0.3);
+}
+
+body, html { 
+  margin: 0; 
+  padding: 0; 
+  width: 100%; 
+  min-height: 100%; 
+  background-color: var(--theme-bg);
+  font-family: var(--theme-font-main);
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+#root { width: 100%; min-height: 100vh; display: flex; flex-direction: column; }
+
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 9999;
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+::-webkit-scrollbar-thumb { background: var(--theme-primary); border-radius: 10px; }
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--theme-primary) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--theme-primary) 1px, transparent 1px);
+  background-size: 80px 80px;
+  perspective: 1000px;
+  transform: rotateX(60deg) translateY(-30%) scale(2.5);
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
+  animation: grid-move 40s linear infinite;
+}
+
+@keyframes grid-move {
+  from { background-position: 0 0; }
+  to { background-position: 0 80px; }
+}
+
+.glass-card {
+  background: var(--theme-card-bg);
+  backdrop-blur: 30px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neural-core {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.buddy-btn-glow:hover {
+  box-shadow: 0 0 20px var(--theme-primary);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--theme-primary);
+  border-radius: 10px;
+}
