@@ -1,0 +1,8 @@
+{
+  "name": "REMKODai PRO - Akıllı Eğitim Asistanı",
+  "description": "Kursiyerler için özel kaynaklarla eğitilmiş, sesli ve görüntülü içerik üretebilen yapay zeka eğitim asistanı.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
